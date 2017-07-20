@@ -11,5 +11,5 @@ skins = {
 }
 
 # The loader skins will be called nameLoader\nameUnloader
-# EG: Login ScreenLoader \ Login ScreenUnloader
+# EG: LoginScreenLoader \ LoginScreenUnloader
 name = "LoginScreen"
