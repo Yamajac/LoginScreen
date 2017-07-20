@@ -1,4 +1,6 @@
-[Rainmeter]
+from config import Users
+
+UserPicture = """[Rainmeter]
 Update=-1
 OnRefreshAction=[!Move (#SCREENAREAWIDTH#/2)-55 (#SCREENAREAHEIGHT#/2)-120]
 
@@ -17,8 +19,8 @@ Shape=Rectangle 0,115,110,25,3,3 | FillColor 100,100,100,140 | StrokeWidth 0
 Measure=String
 DynamicVariables=1
 String=-
-IfMatch=password
-IfMatchAction=[!ActivateConfig "LoginScreen\LoginScreenUnloader"][!ActivateConfig "YamaSkin\YamaSkinLoader"][!DeactivateConfig]
+IfMatch={0}
+IfMatchAction=[!ActivateConfig "LoginScreen\LoginScreenUnloader"][!ActivateConfig "{1}"][!DeactivateConfig]
 
 [MeasureInputPassword]
 Measure=Plugin
@@ -37,7 +39,7 @@ OnDismissAction=[!ShowMeterGroup PasswordField][!Update]
 
 [meterUserPic]
 Meter=Image
-ImageName=#@#Images\SpicyDefault.png
+ImageName={2}
 X=5
 Y=5
 W=100
@@ -53,7 +55,14 @@ FontSize=10
 FontColor=255,255,255,255
 AntiAlias=1
 Text=Enter Password..
-LeftMouseUpAction=[!CommandMeasure "MeasureInputPassword" "ExecuteBatch 1-2"][!HideMeterGroup PasswordField][!Update]
+LeftMouseUpAction=[!CommandMeasure "MeasureInputPassword" "ExecuteBatch 1-2"][!HideMeterGroup PasswordField][!Update]"""
 
-
-
+def genIni():
+	for user in Users.users:
+		with open ('LoginScreenUserPicture\{0}.ini'.format(user), 'w') as f:
+			data = Users.users[user]
+			f.write(UserPicture.format(data['password'], data['loader'], data['image']))
+	
+	
+if __name__ == '__main__':
+	genIni()
