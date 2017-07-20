@@ -1,8 +1,8 @@
 
 
-# A dict of the skins needed to be loaded/unloaded
+# A dict of the skins needed to be loaded/unloaded, as well as their positions.
 # ConfigName : [x,y]
-# If the config sets it's own position then
+# If the skin sets its own position then
 # ConfigName : False
 
 skins = {
