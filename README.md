@@ -7,4 +7,4 @@ One skin will be an unloader. When this skin is loaded, the theme will be comple
 One skill will be a refresher. When this skin is loaded, all of the skins in the theme will be refreshed.
 
 
-Copy these three skin folders into a separate skin file, and then activate them accordingly. It's actually rather simple.
+Copy these three skin folders into a separate rainmeter skin, and then activate them accordingly. It's actually rather simple.
