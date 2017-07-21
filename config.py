@@ -17,6 +17,30 @@ class Loaders:
 		"LoginScreen" : {
 			"LoginScreen\LoginScreenBackground"  :[0,     0],
 			"LoginScreen\LoginScreenUserSelector" :False
+		},
+		
+		"LoginScreenTest" : {
+			"LoginScreen\YamaWallpaper" : [0,     0],
+			"Illustro\Clock"            : [142, 129],
+			"Illustro\Disk"             : [420, 590],
+			"Illustro\Google"           : [819, 249],
+			"Illustro\Recycle Bin"      : [991, 660]
+		},
+		
+		"LoginScreenTest2" : {
+			"LoginScreen\YamaWallpaper" : [0,     0],
+			"Illustro\Clock"            : [552, 342],
+			"Illustro\Disk"             : [981, 234],
+			"Illustro\Google"           : [120, 592],
+			"Illustro\Recycle Bin"      : [321, 523]
+		},
+		
+		"LoginScreenTest3" : {
+			"LoginScreen\YamaWallpaper" : [0,     0],
+			"Illustro\Clock"            : [912, 412],
+			"Illustro\Disk"             : [931, 342],
+			"Illustro\Google"           : [423, 931],
+			"Illustro\Recycle Bin"      : [943, 432]
 		}
 	}
 
@@ -33,8 +57,19 @@ class Users:
 	# GenUserSelector.py will re-create a LoginScreenUserSelector skin using this information, so make sure all of the profiles you want access to are in this dict.
 	users = {
 		"tester": {
-			"loader"   : "YamaSkin\YamaSkinLoader",
+			"loader"   : "LoginScreen\LoginScreenTestLoader",
+			"password" : "password",
+			"image"    : "#@#Images\SpicyDefault.png"
+		},
+		"tester2": {
+			"loader"   : "LoginScreen\LoginScreenTest2Loader",
+			"password" : "password",
+			"image"    : "#@#Images\SpicyDefault.png"
+		},
+		"tester3": {
+			"loader"   : "LoginScreen\LoginScreenTest3Loader",
 			"password" : "password",
 			"image"    : "#@#Images\SpicyDefault.png"
 		}
+		
 	}

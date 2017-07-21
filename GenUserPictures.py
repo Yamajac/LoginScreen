@@ -45,6 +45,9 @@ Y=5
 W=100
 H=100
 PreserveAspectRatio=1
+MouseOverAction=[!ActivateConfig "LoginScreen\Tooltip"][!Move (#SCREENAREAWIDTH#/2)-55 (#SCREENAREAHEIGHT#/2)-145 "LoginScreen\Tooltip"][!SetOption Tooltip Text "Change User" "LoginScreen\Tooltip"][!Update "LoginScreen\Tooltip"]
+MouseLeaveAction=[!DeactivateConfig "LoginScreen\Tooltip"]
+LeftMouseUpAction=[!DeactivateConfig "LoginScreen\Tooltip"][!DeactivateConfig][!ActivateConfig "LoginScreen\LoginScreenUserSelector"]
 
 [meterEnterPassword]
 Meter=String

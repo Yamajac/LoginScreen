@@ -19,16 +19,17 @@ def genIni(prefix, file, type, move=False):
 				y=Loaders.skins[file][skin][1]
 				action = '[!Move "{0}" "{1}" "{2}"]'.format(x,y,skin)
 				actions+=action
-		actions+='[!DeactivateConfig "{0}\{1}{2}"]\n\n'.format(file,file,type)
+		actions+='[!DeactivateConfig]\n\n'
 		f.write(actions)
 		
 		f.write("[meterLoading]\n")
 		f.write("Meter=String")
 			
 if __name__ == '__main__':
-	type="Loader"
 
 	for loader in Loaders.skins:
+	
+		type="Loader"
 		os.makedirs("Loaders/{0}{1}".format(loader,type), exist_ok=True)
 		genIni('[!ActivateConfig ', loader, type, True)
 		

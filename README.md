@@ -8,3 +8,7 @@ One skill will be a refresher. When this skin is loaded, all of the skins in the
 
 
 Copy these three skin folders into a separate rainmeter skin, and then activate them accordingly. It's actually rather simple.
+
+
+The skin has THREE example users, along with three example loader, refresher and unloader skins. In real world use, you would probably want to separate the loader skins into your skin's folder.  
+But for example's sake, they're put in this skin folder. 
