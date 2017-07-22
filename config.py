@@ -12,6 +12,8 @@ class Loaders:
 	#   "ConfigToBeLoaded" : False,
 	#	"bangs"            : [list of arbitrary bangs to be run, not including the brackets]
 	# }
+	# If you need your bangs to be run before the skins are loaded, put the bangs at the start of the list.
+	# If you need them to be run after the skins are loaded, put the bangs at the end of the list.
 	# You can run GenLoaders.py to generate all of the loader skins.
 	# They will be generated in the Loaders folder, and the skins will be called LoaderNameLoader \ LoaderNameUnloader \ LoaderNameRefresher
 	# The initial setup of these can be a bit tedious, but once it's setup, modifying it is very simple.
@@ -63,6 +65,8 @@ class Loaders:
 class Users:
 	
 	# A dict of all the users you want to generate.
+	# If you set password to False, then clicking the user's profile at the selection screen will sign you into that profile.
+	# Otherwise, you'll be sent to a separate screen where you need to input the correct password.
 	# USER: {
 	#	"loader"   : "your custom loader config",
 	#	"password" : "User's Password",
@@ -73,7 +77,7 @@ class Users:
 	users = {
 		"tester": {
 			"loader"   : "LoginScreen\LoginScreenTestLoader",
-			"password" : "password",
+			"password" : False,
 			"image"    : "#@#Images\SpicyDefault.png"
 		},
 		"tester2": {
@@ -83,7 +87,7 @@ class Users:
 		},
 		"tester3": {
 			"loader"   : "LoginScreen\LoginScreenTest3Loader",
-			"password" : "password",
+			"password" : False,
 			"image"    : "#@#Images\SpicyDefault.png"
 		}
 		

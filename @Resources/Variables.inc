@@ -1,3 +1,3 @@
 [Variables]
-Name=LoginScreenTest3
-Unloader=LoginScreen\LoginScreenTest3Unloader
+Name=LoginScreenTest
+Unloader=LoginScreen\LoginScreenTestUnloader

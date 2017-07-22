@@ -1,4 +1,5 @@
 from config import Users
+import traceback
 
 Selector = """[Rainmeter]
 Update=-1
@@ -19,7 +20,7 @@ X={2}
 W=150
 H=150
 PreserveAspectRatio=1
-LeftMouseUpAction=[!DeactivateConfig "LoginScreen\LoginScreenUserSelector"][!ActivateConfig "LoginScreen\LoginScreenUserPicture" "{0}.ini"]
+LeftMouseUpAction=[!DeactivateConfig]{3}
 
 [meter{0}String]
 Meter=String
@@ -35,9 +36,13 @@ def genIni():
 		f.write('\n\n')
 		
 		for i, user in enumerate(Users.users):
-			f.write(User.format(user, Users.users[user]['image'], i*160))
+			loader = '[!ActivateConfig "LoginScreen\LoginScreenUserPicture" "{0}.ini"]'.format(user) if Users.users[user]['password'] else '[!ActivateConfig "LoginScreen\LoginScreenUnloader"][!ActivateConfig "{0}"]'.format(Users.users[user]['loader'])
+			f.write(User.format(user, Users.users[user]['image'], i*160, loader))
 			f.write('\n\n')
 	
 if __name__ == '__main__':
-	genIni()
+	try:
+		genIni()
+	except:
+		input(traceback.print_exc())
 	
