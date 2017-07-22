@@ -1,5 +1,5 @@
 from config import Loaders
-import os
+import os, traceback
 
 
 		
@@ -8,12 +8,18 @@ def genIni(prefix, file, type, move=False):
 		f.write('[Rainmeter]\n')
 		f.write('Update=-1\n')
 		
+		print(file)
 		actions = "OnUpdateAction="
 		for skin in Loaders.skins[file]:
+			if skin=='bangs':
+				if move:
+					print('   {0}'.format(Loaders.skins[file][skin]))
+					actions+=''.join('[{0}]'.format(d) for d in Loaders.skins[file][skin])
+				continue
 			action = '{0}"{1}"]'.format(prefix,skin)
 			actions+=action
 			
-			print(skin)
+			print('   {0}'.format(skin))
 			if move and Loaders.skins[file][skin]:
 				x=Loaders.skins[file][skin][0]
 				y=Loaders.skins[file][skin][1]
@@ -24,9 +30,8 @@ def genIni(prefix, file, type, move=False):
 		
 		f.write("[meterLoading]\n")
 		f.write("Meter=String")
-			
-if __name__ == '__main__':
-
+		
+def main():
 	for loader in Loaders.skins:
 	
 		type="Loader"
@@ -40,4 +45,10 @@ if __name__ == '__main__':
 		type="Refresher"
 		os.makedirs("Loaders/{0}{1}".format(loader,type), exist_ok=True)
 		genIni('[!Refresh ', loader, type, True)
-	
+			
+if __name__ == '__main__':
+
+	try:
+		main()
+	except Exception as e:
+		input(traceback.format_exc())
