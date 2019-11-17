@@ -16,7 +16,10 @@ def genIni(prefix, file, type, move=False):
 					print('   {0}'.format(Loaders.skins[file][skin]))
 					actions+=''.join('[{0}]'.format(d) for d in Loaders.skins[file][skin])
 				continue
-			action = '{0}"{1}"]'.format(prefix,skin)
+			if prefix == '[!ActivateConfig ' and Loaders.skins[file][skin] and len(Loaders.skins[file][skin])==3:
+				action = '{0}"{1}" "{2}.ini"]'.format(prefix,skin,Loaders.skins[file][skin][2])
+			else:
+				action = '{0}"{1}"]'.format(prefix,skin)
 			actions+=action
 			
 			print('   {0}'.format(skin))

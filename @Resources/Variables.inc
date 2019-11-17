@@ -1,3 +1,3 @@
 [Variables]
-Name=LoginScreenTest
-Unloader=LoginScreen\LoginScreenTestUnloader
+Name=DEVKIT
+Unloader=LoginScreen\DEVKITUnloader

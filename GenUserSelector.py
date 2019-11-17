@@ -8,12 +8,15 @@ OnRefreshAction=[!Move (#SCREENAREAWIDTH#/2)-{0} (#SCREENAREAHEIGHT#/2)-145]
 [userStyle]
 FontSize=16
 FontFace=Arial
+Group = tester
 StringEffect=Border
 FontEffectColor=180,180,180,120
 AntiAlias=1
-y=126r"""
+DynamicVariables=1
+X=(75 - ([#CurrentSection#:W]/2))r
+y=150r"""
 
-User = """[meter{0}]
+User = """[{0}]
 Meter=Image
 ImageName={1}
 X={2}
@@ -22,9 +25,8 @@ H=150
 PreserveAspectRatio=1
 LeftMouseUpAction=[!DeactivateConfig]{3}
 
-[meter{0}String]
+[{0}String]
 Meter=String
-X=0r
 MeterStyle=userStyle
 Text={0}"""
 
