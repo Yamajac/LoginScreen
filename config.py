@@ -40,13 +40,18 @@ class Loaders:
         "DEVKIT" : {
             "DevKit\Wallpaper"          : [0,     0],
             "DevKit\Clock"              : [909, 836],
-            "DevKit\RainManager"        : [13,   12],
+            "DevKit\RainManager"        : [0,     0],
             "bangs"                     : [
                 '!WriteKeyValue Variables Name DEVKIT "#@#Variables.inc"',
                 '!WriteKeyValue Variables Unloader "LoginScreen\DEVKITUnloader" "#@#Variables.inc"',
             ]
             
+        },
+        
+        "MINIMAL" : {
+            "MinimalSuite\Wallpaper"    : [0,     0]
         }
+        
         
     }
 
@@ -74,6 +79,12 @@ class Users:
             "loader"   : "LoginScreen\DEVKITLoader",
             "password" : False,
             "image"    : "#@#Images\OpenSourcerer.png"
+        },
+        
+        "Minimalist": {
+            "loader"   : "LoginScreen\MINIMALLoader",
+            "password" : "minimalism",
+            "image"    : "#@#Images\Minimalist.png"
         }
         
     }
